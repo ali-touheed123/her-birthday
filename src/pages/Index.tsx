@@ -62,7 +62,7 @@ const Index = () => {
   };
 
   return (
-    <main className="relative aurora-bg grain text-foreground">
+    <main className="relative grain text-foreground">
       {/* Scroll progress bar */}
       <motion.div
         style={{ width: progressBar }}
@@ -70,7 +70,7 @@ const Index = () => {
       />
 
       {/* Persistent particle field across the whole page */}
-      <div className="pointer-events-none fixed inset-0 z-0">
+      <div className="pointer-events-none fixed inset-0 z-0 aurora-bg">
         <div className="absolute inset-0">
           <ParticleField density={50} />
         </div>

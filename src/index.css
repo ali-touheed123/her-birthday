@@ -135,6 +135,8 @@
   .aurora-bg {
     background-color: hsl(var(--background));
     background-image: var(--gradient-aurora);
+    background-attachment: fixed;
+    background-size: cover;
   }
 
   /* Soft noise overlay for cinematic film grain */
