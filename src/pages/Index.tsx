@@ -4,11 +4,13 @@ import { ParticleField } from "@/components/ParticleField";
 import { FloatingOrbs } from "@/components/FloatingOrbs";
 import { Scene } from "@/components/Scene";
 import { Typewriter } from "@/components/Typewriter";
+import { FlowerIntro } from "@/components/FlowerIntro";
 
 // Edit this name to personalize the experience.
 const HER_NAME = "Zainab";
 
 const Index = () => {
+  const [introComplete, setIntroComplete] = useState(false);
   const [entered, setEntered] = useState(false);
   const [showFinalNote, setShowFinalNote] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -75,7 +77,11 @@ const Index = () => {
 
       {/* ============ ENTRY OVERLAY ============ */}
       <AnimatePresence mode="wait">
-        {!entered && (
+        {!entered && !introComplete && (
+          <FlowerIntro key="flower" onComplete={() => setIntroComplete(true)} />
+        )}
+
+        {!entered && introComplete && (
           <motion.div
             key="entry"
             initial={{ opacity: 0 }}
