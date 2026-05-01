@@ -17,7 +17,7 @@ export const FloatingOrbs = ({ progress }: { progress?: MotionValue<number> }) =
   const r2 = useTransform(p, [0, 1], [0, -45]);
 
   return (
-    <div ref={ref} className="pointer-events-none absolute inset-0 overflow-hidden perspective-1000" aria-hidden>
+    <div ref={ref} className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl perspective-1000" aria-hidden>
       <motion.div
         style={{ y: y1, rotate: r1 }}
         className="absolute -left-20 top-[10%] h-[280px] w-[280px] rounded-full opacity-70 blur-3xl animate-float-slow"
