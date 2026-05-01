@@ -51,7 +51,7 @@ export const FlowerIntro = ({ onComplete }: { onComplete: () => void }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, scale: 1.1, filter: "blur(20px)" }}
       transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
-      className="absolute inset-0 z-50 flex items-center justify-center bg-background pointer-events-none overflow-hidden"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-background pointer-events-none overflow-hidden"
     >
       <svg width="300" height="400" viewBox="0 0 300 400" className="overflow-visible">
         <defs>
