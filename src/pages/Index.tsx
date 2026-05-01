@@ -5,6 +5,12 @@ import { FloatingOrbs } from "@/components/FloatingOrbs";
 import { Scene } from "@/components/Scene";
 import { Typewriter } from "@/components/Typewriter";
 import { FlowerIntro } from "@/components/FlowerIntro";
+import React from "react";
+
+// Helper to wrap emojis so they don't get the gradient text effect
+const E = ({ children }: { children: React.ReactNode }) => (
+  <span className="no-gradient">{children}</span>
+);
 
 // Edit this name to personalize the experience.
 const HER_NAME = "Zainab";
@@ -97,7 +103,7 @@ const Index = () => {
               transition={{ duration: 2.4, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
               className="font-serif-luxe text-center text-3xl font-light leading-tight text-foreground sm:text-4xl glow-soft"
             >
-              Hey… I made something for you <span className="inline-block">👀</span>
+              Hey… I made something for you <E>👀</E>
             </motion.h1>
 
             <motion.p
@@ -178,7 +184,7 @@ const Index = () => {
           <MemoryCard
             kicker="Chapter I"
             line="Happy Birthday to my cutest, softest,"
-            highlight="most dangerously adorable human ever 🥳🌸💖"
+            highlight={<>most dangerously adorable human ever <E>🥳🌸💖</E></>}
           />
         </Scene>
 
@@ -186,15 +192,15 @@ const Index = () => {
           <MemoryCard
             kicker="Chapter II"
             line="May Allah protect you from everything bad, fill your life with happiness, and make all your dreams come true…"
-            highlight="but honestly, I feel like the world already got lucky the day you were born 🤭✨"
+            highlight={<>but honestly, I feel like the world already got lucky the day you were born <E>🤭✨</E></>}
           />
         </Scene>
 
         <Scene>
           <MemoryCard
             kicker="Chapter III"
-            line="Today isn’t just your birthday…today is all about YOU 👀🎂"
-            highlight="No stress, no responsibilities — just pure princess treatment 😌👑"
+            line="Today isn’t just your birthday…today is all about YOU <E>👀🎂</E>"
+            highlight={<>No stress, no responsibilities — just pure princess treatment <E>😌👑</E></>}
           />
         </Scene>
 
@@ -216,10 +222,10 @@ const Index = () => {
               transition={{ duration: 1.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl"
             >
-              Like how are you even real? 😭💘 <br /><br />
+              Like how are you even real? <E>😭💘</E> <br /><br />
               That smile? <span className="text-aurora">Illegal.</span><br />
               That vibe? <span className="text-aurora">Addictive.</span><br />
-              Those little quirks? <span className="text-aurora">Unforgettable. 🫠❤️</span>
+              Those little quirks? <span className="text-aurora">Unforgettable. <E>🫠❤️</E></span>
             </motion.h3>
           </div>
         </Scene>
@@ -251,7 +257,7 @@ const Index = () => {
             <p className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase">final note</p>
             <h3 className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl">
               So today, just smile a little extra, laugh a little louder... <br />
-              <span className="text-aurora">you’re not just loved, you’re adored 😌💖</span>
+              <span className="text-aurora">you’re not just loved, you’re adored <E>😌💖</E></span>
             </h3>
 
             <motion.button
@@ -351,7 +357,7 @@ const NameReveal = ({ name }: { name: string }) => {
 };
 
 /* ---------- Memory card ---------- */
-const MemoryCard = ({ kicker, line, highlight }: { kicker: string; line: string; highlight: string }) => (
+const MemoryCard = ({ kicker, line, highlight }: { kicker: string; line: string; highlight: React.ReactNode }) => (
   <div className="text-center">
     <motion.p
       initial={{ opacity: 0, y: 16 }}
@@ -403,7 +409,7 @@ const RevealCard = () => {
           >
             <p className="font-serif-luxe text-lg sm:text-xl italic leading-snug text-foreground">
               "I swear, you have this soft magic about you… <br />
-              <span className="text-aurora">the kind that makes everything feel lighter, calmer, and way happier just by existing 🥹✨"</span>
+              <span className="text-aurora">the kind that makes everything feel lighter, calmer, and way happier just by existing <E>🥹✨</E>"</span>
             </p>
           </div>
         </motion.div>
