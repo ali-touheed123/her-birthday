@@ -4,11 +4,13 @@ import { ParticleField } from "@/components/ParticleField";
 import { FloatingOrbs } from "@/components/FloatingOrbs";
 import { Scene } from "@/components/Scene";
 import { Typewriter } from "@/components/Typewriter";
+import { FlowerIntro } from "@/components/FlowerIntro";
 
 // Edit this name to personalize the experience.
-const HER_NAME = "Aria";
+const HER_NAME = "Zainab";
 
 const Index = () => {
+  const [introComplete, setIntroComplete] = useState(false);
   const [entered, setEntered] = useState(false);
   const [showFinalNote, setShowFinalNote] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -34,8 +36,8 @@ const Index = () => {
       master.gain.linearRampToValueAtTime(0.06, ctx.currentTime + 4);
       master.connect(ctx.destination);
 
-      // Two detuned sine pads + a subtle high shimmer
-      const freqs = [110, 164.81, 220, 329.63];
+      // Bright, uplifting ambient C Major 7 chord
+      const freqs = [130.81, 196.00, 246.94, 329.63];
       freqs.forEach((f, i) => {
         const o = ctx.createOscillator();
         o.type = i === 3 ? "triangle" : "sine";
@@ -74,11 +76,16 @@ const Index = () => {
       </div>
 
       {/* ============ ENTRY OVERLAY ============ */}
-      <AnimatePresence>
-        {!entered && (
+      <AnimatePresence mode="wait">
+        {!entered && !introComplete && (
+          <FlowerIntro key="flower" onComplete={() => setIntroComplete(true)} />
+        )}
+
+        {!entered && introComplete && (
           <motion.div
             key="entry"
-            initial={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0, filter: "blur(20px)" }}
             transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-background/95 px-6"
@@ -261,7 +268,6 @@ const Index = () => {
         {/* Closing fade-to-black */}
         <Scene parallax={false}>
           <div className="text-center opacity-60">
-            <p className="font-serif-luxe text-xl italic">— fin —</p>
             <p className="mt-3 text-[10px] tracking-[0.4em] text-muted-foreground uppercase">made with love</p>
           </div>
         </Scene>
