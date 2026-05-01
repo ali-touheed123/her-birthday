@@ -170,17 +170,51 @@ const Index = () => {
         <Scene>
           <MemoryCard
             kicker="Chapter I"
-            line="Out of all the people in the world,"
-            highlight="the universe gave me you."
+            line="Happy Birthday to my cutest, softest,"
+            highlight="most dangerously adorable human ever 🥳🌸💖"
           />
         </Scene>
 
         <Scene>
           <MemoryCard
             kicker="Chapter II"
-            line="Every laugh, every late-night talk —"
-            highlight="quiet little miracles."
+            line="May Allah protect you from everything bad, fill your life with happiness, and make all your dreams come true…"
+            highlight="but honestly, I feel like the world already got lucky the day you were born 🤭✨"
           />
+        </Scene>
+
+        <Scene>
+          <MemoryCard
+            kicker="Chapter III"
+            line="Today isn’t just your birthday…today is all about YOU 👀🎂"
+            highlight="No stress, no responsibilities — just pure princess treatment 😌👑"
+          />
+        </Scene>
+
+        <Scene>
+          <div className="text-center">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase"
+            >
+              let's talk about you
+            </motion.p>
+            <motion.h3
+              initial={{ opacity: 0, y: 24, filter: "blur(20px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 1.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl"
+            >
+              Like how are you even real? 😭💘 <br /><br />
+              That smile? <span className="text-aurora">Illegal.</span><br />
+              That vibe? <span className="text-aurora">Addictive.</span><br />
+              Those little quirks? <span className="text-aurora">Unforgettable. 🫠❤️</span>
+            </motion.h3>
+          </div>
         </Scene>
 
         {/* Tap-to-reveal hidden card */}
@@ -191,9 +225,12 @@ const Index = () => {
         {/* Typewriter line */}
         <Scene>
           <div className="text-center">
-            <p className="font-sans-luxe text-xs tracking-[0.4em] text-muted-foreground uppercase">a thought I kept for today</p>
+            <p className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase">a thought I kept for today</p>
             <h3 className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl glow-soft min-h-[6rem]">
-              <Typewriter text="You make ordinary days feel like cinema." speed={48} start={entered} />
+              And somehow, without even trying,<br />
+              <span className="text-aurora inline-block mt-4">
+                <Typewriter text="you’ve taken a very special place in my heart 🤍" speed={45} start={entered} />
+              </span>
             </h3>
           </div>
         </Scene>
@@ -206,8 +243,8 @@ const Index = () => {
           <div className="text-center">
             <p className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase">final note</p>
             <h3 className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl">
-              However loud the world gets, <br />
-              <span className="text-aurora">I hope today feels gentle.</span>
+              So today, just smile a little extra, laugh a little louder... <br />
+              <span className="text-aurora">you’re not just loved, you’re adored 😌💖</span>
             </h3>
 
             <motion.button
@@ -248,9 +285,9 @@ const Index = () => {
               className="relative max-w-md rounded-3xl glass p-10 text-center glow-bloom"
             >
               <div className="mb-4 text-3xl">💌</div>
-              <p className="font-serif-luxe text-2xl font-light italic leading-snug">
-                Happy birthday, {HER_NAME}. <br />
-                Thank you for existing — quietly, beautifully, exactly as you are.
+              <p className="font-serif-luxe text-xl sm:text-2xl font-light italic leading-snug">
+                Sending you an unreasonable amount of love, hugs, and all the good vibes in the universe… <br /><br />
+                because honestly, you deserve nothing less 💕🌹✨
               </p>
               <button
                 onClick={() => setShowFinalNote(false)}
@@ -355,12 +392,12 @@ const RevealCard = () => {
             <p className="font-serif-luxe text-lg italic text-foreground/90">tap to reveal</p>
           </div>
           <div
-            className="absolute inset-0 flex flex-col items-center justify-center text-center"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
             style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
           >
-            <p className="font-serif-luxe text-xl italic leading-snug text-foreground">
-              "Of all my favorite scenes, <br />
-              <span className="text-aurora">you’re the one I rewatch."</span>
+            <p className="font-serif-luxe text-lg sm:text-xl italic leading-snug text-foreground">
+              "I swear, you have this soft magic about you… <br />
+              <span className="text-aurora">the kind that makes everything feel lighter, calmer, and way happier just by existing 🥹✨"</span>
             </p>
           </div>
         </motion.div>
