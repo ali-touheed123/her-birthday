@@ -70,16 +70,15 @@ export const ParticleField = ({
         const sway = Math.sin(t * 0.6 + p.phase) * 8;
         const px = p.x * w + sway;
         const py = (p.y * h) - (parallax * p.z * 0.4);
-        const radius = p.r * (0.6 + p.z) * 4;
+        const radius = p.r * (0.6 + p.z) * 3;
 
-        const grad = ctx.createRadialGradient(px, py, 0, px, py, radius);
-        grad.addColorStop(0, `hsla(${p.hue}, 95%, 72%, ${0.55 * p.z})`);
-        grad.addColorStop(0.4, `hsla(${p.hue}, 95%, 65%, ${0.18 * p.z})`);
-        grad.addColorStop(1, `hsla(${p.hue}, 95%, 60%, 0)`);
-        ctx.fillStyle = grad;
+        ctx.fillStyle = `hsla(${p.hue}, 90%, 70%, ${0.4 * p.z})`;
+        ctx.shadowBlur = radius * 2;
+        ctx.shadowColor = `hsla(${p.hue}, 90%, 70%, ${0.5 * p.z})`;
         ctx.beginPath();
         ctx.arc(px, py, radius, 0, Math.PI * 2);
         ctx.fill();
+        ctx.shadowBlur = 0; // reset for next
       }
       raf = requestAnimationFrame(tick);
     };

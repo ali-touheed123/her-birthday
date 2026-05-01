@@ -90,10 +90,8 @@
   }
 
   .glass {
-    background: var(--gradient-glass);
-    backdrop-filter: blur(20px) saturate(140%);
-    -webkit-backdrop-filter: blur(20px) saturate(140%);
-    border: 1px solid hsl(280 50% 60% / 0.15);
+    background: linear-gradient(135deg, hsl(280 30% 25% / 0.8), hsl(240 30% 15% / 0.7));
+    border: 1px solid hsl(280 50% 60% / 0.2);
   }
 
   .glow-bloom { box-shadow: var(--shadow-bloom); }
