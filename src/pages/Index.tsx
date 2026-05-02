@@ -1,5 +1,6 @@
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import confetti from "canvas-confetti";
 import { ParticleField } from "@/components/ParticleField";
 import { FloatingOrbs } from "@/components/FloatingOrbs";
 import { Scene } from "@/components/Scene";
@@ -449,11 +450,11 @@ const MemoryCard = ({ kicker, line, highlight }: { kicker: string; line: string;
       {kicker}
     </motion.p>
     <motion.h3
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl will-change-[transform,opacity]"
+      className="mt-8 font-serif-luxe text-4xl font-light italic leading-relaxed text-foreground sm:text-5xl pb-6 will-change-[transform,opacity]"
     >
       {line} <br />
       <span className="text-aurora">{highlight}</span>
@@ -501,41 +502,53 @@ const RevealCard = () => {
 /* ---------- Climax ---------- */
 const Climax = () => {
   const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: false, amount: 0.4 });
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 1.15, 1.6]);
   const blur = useTransform(scrollYProgress, [0, 0.4, 0.6, 1], [24, 0, 0, 24]);
   const filter = useTransform(blur, (v) => `blur(${v}px)`);
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
 
-  // Confetti pieces
-  const confetti = Array.from({ length: 36 }, (_, i) => i);
+  useEffect(() => {
+    if (isInView) {
+      const end = Date.now() + 3 * 1000;
+      const colors = ["#ff71ce", "#01cdfe", "#b967ff", "#fffb96"];
+
+      (function frame() {
+        confetti({
+          particleCount: 3,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0, y: 0.6 },
+          colors: colors,
+        });
+        confetti({
+          particleCount: 3,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1, y: 0.6 },
+          colors: colors,
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      }());
+
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: colors,
+        disableForReducedMotion: true,
+      });
+    }
+  }, [isInView]);
 
   return (
     <section ref={ref} className="relative flex min-h-[140svh] items-center justify-center overflow-hidden px-6">
       <FloatingOrbs />
-
-      {/* Slow-motion confetti */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {confetti.map((i) => {
-          const left = (i * 137.5) % 100;
-          const delay = (i % 8) * 0.4;
-          const dur = 6 + (i % 5);
-          const colors = ["hsl(var(--neon-pink))", "hsl(var(--neon-violet))", "hsl(var(--neon-blue))", "hsl(var(--gold))"];
-          const color = colors[i % colors.length];
-          const size = 6 + (i % 4) * 2;
-          return (
-            <motion.span
-              key={i}
-              className="absolute top-[-10%] rounded-sm"
-              style={{ left: `${left}%`, width: size, height: size * 0.4, background: color, boxShadow: `0 0 12px ${color}` }}
-              initial={{ y: -20, rotate: 0, opacity: 0 }}
-              whileInView={{ y: "120vh", rotate: 540, opacity: [0, 1, 1, 0] }}
-              viewport={{ once: false, amount: 0.1 }}
-              transition={{ duration: dur, delay, ease: [0.4, 0, 0.6, 1], repeat: Infinity, repeatDelay: 1.5 }}
-            />
-          );
-        })}
-      </div>
 
       <motion.div style={{ scale, filter, opacity }} className="relative text-center">
         <motion.p
@@ -543,13 +556,13 @@ const Climax = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.6 }}
-          className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase mb-6"
+          className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase mb-8"
         >
           and so —
         </motion.p>
-        <h2 className="font-serif-luxe text-5xl font-light leading-[1.05] sm:text-7xl">
+        <h2 className="font-serif-luxe text-6xl font-light leading-relaxed sm:text-8xl pb-8">
           <span className="text-aurora glow-soft">Happy</span> <br />
-          <span className="text-aurora glow-soft">Birthday</span> <span className="inline-block">🎉</span>
+          <span className="text-aurora glow-soft">Birthday</span> <span className="inline-block"><E>🎉</E></span>
         </h2>
       </motion.div>
     </section>
