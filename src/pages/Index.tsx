@@ -69,8 +69,9 @@ const Index = () => {
         className="fixed left-0 top-0 z-50 h-[2px] bg-gradient-to-r from-neon-pink via-neon-violet to-neon-blue"
       />
 
-      {/* Persistent particle field across the whole page */}
-      <div className="pointer-events-none fixed inset-0 z-0 aurora-bg">
+      {/* Persistent background elements */}
+      <div className="pointer-events-none fixed inset-0 z-0 aurora-bg overflow-hidden">
+        <FloatingOrbs />
         <div className="absolute inset-0">
           <ParticleField density={50} />
         </div>
@@ -155,7 +156,6 @@ const Index = () => {
       <div aria-hidden={!entered}>
         {/* Hero */}
         <Scene align="center" parallax={false}>
-          <FloatingOrbs />
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: entered ? 1 : 0 }}
@@ -275,7 +275,7 @@ const Index = () => {
             </motion.h3>
           </div>
         </Scene>
-
+        
         <Scene>
           <div className="text-center">
             <motion.p
@@ -368,10 +368,11 @@ const Index = () => {
             >
               <div className="mb-4 text-3xl">💌</div>
               <p className="font-serif-luxe text-xl sm:text-2xl font-light italic leading-snug">
-                Stay exactly the way you were… <br />
+                Stay exactly the way you are… <br />
                 that’s already more than enough <E>✨</E> <br /><br />
                 <span className="text-sm font-sans-luxe tracking-widest opacity-70">
-                  Sending you an unreasonable amount of love, hugs, and all the good vibes in the universe… <E>💕🌹✨</E>
+                  Sending you an unreasonable amount of love, hugs, and all the good vibes in the universe… <br /><br />
+                  because honestly, you deserve nothing less <E>💕🌹✨</E>
                 </span>
               </p>
               <button
