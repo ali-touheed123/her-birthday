@@ -141,6 +141,17 @@
     text-shadow: 0 0 30px hsl(var(--neon-violet) / 0.6), 0 0 60px hsl(var(--neon-pink) / 0.3);
   }
 
+  .no-gradient {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    color: #fff !important;
+    -webkit-text-fill-color: initial !important;
+    text-fill-color: initial !important;
+    display: inline-block !important;
+    filter: none !important;
+  }
+
   .aurora-bg {
     background-color: hsl(var(--background));
     background-image: var(--gradient-aurora);

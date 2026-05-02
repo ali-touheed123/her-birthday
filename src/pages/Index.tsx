@@ -165,7 +165,7 @@ const Index = () => {
             className="relative text-center px-4"
           >
             <p className="font-sans-luxe text-[10px] tracking-[0.6em] text-muted-foreground uppercase opacity-80 mb-6">A film for one</p>
-            <h2 className="font-serif-luxe text-6xl font-medium italic leading-[1.2] text-foreground sm:text-7xl pb-4">
+            <h2 className="font-serif-luxe text-6xl font-medium italic leading-[1.4] text-foreground sm:text-7xl pb-12">
               Once upon a <br />
               <span className="text-aurora">very special day…</span>
             </h2>
@@ -194,7 +194,7 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif-luxe text-4xl font-light italic leading-[1.3] text-foreground sm:text-5xl pb-4"
+              className="font-serif-luxe text-4xl font-light italic leading-[1.4] text-foreground sm:text-5xl pb-12"
             >
               like any other day <br />
               <span className="text-aurora mt-4 block">But something about it felt different <E>👀</E></span>
@@ -217,11 +217,11 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif-luxe text-4xl font-light italic leading-[1.3] text-foreground sm:text-5xl pb-6"
+              className="font-serif-luxe text-4xl font-light italic leading-[1.4] text-foreground sm:text-5xl pb-12"
             >
               Almost like the world was waiting <br />
               for a <span className="text-aurora italic">cutie to be born…</span> <br /> <br />
-              <span className="font-accent text-4xl text-primary/80 block mt-4 pb-2">
+              <span className="font-accent text-4xl text-primary/80 block mt-4 pb-4">
                 someone who makes everything a little softer, <br />
                 a little brighter <E>✨</E>
               </span>
@@ -272,11 +272,11 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif-luxe text-4xl font-light italic leading-[1.3] text-foreground sm:text-5xl pb-6"
+              className="font-serif-luxe text-4xl font-light italic leading-[1.4] text-foreground sm:text-5xl pb-12"
             >
               because today… is <span className="text-aurora">yours.</span> <br />
               No stress, No worries. <br /> <br />
-              <span className="font-accent text-4xl text-secondary block pb-2">just good vibes and full princess energy <E>👑</E></span>
+              <span className="font-accent text-4xl text-secondary block pb-4">just good vibes and full princess energy <E>👑</E></span>
             </motion.h3>
           </div>
         </Scene>
@@ -296,7 +296,7 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif-luxe text-4xl font-light italic leading-[1.3] text-foreground sm:text-5xl will-change-[transform,opacity] pb-6"
+              className="font-serif-luxe text-4xl font-light italic leading-[1.4] text-foreground sm:text-5xl will-change-[transform,opacity] pb-12"
             >
               Like how are you even real? <E>😭</E> <br /><br />
               That smile? <span className="text-aurora">Illegal.</span><br />
@@ -331,7 +331,7 @@ const Index = () => {
         <Scene parallax={false}>
           <div className="text-center max-w-2xl px-6">
             <p className="font-sans-luxe text-[10px] tracking-[0.5em] text-muted-foreground uppercase mb-8 opacity-60">final note</p>
-            <h3 className="font-serif-luxe text-4xl font-light italic leading-[1.3] text-foreground sm:text-5xl pb-6">
+            <h3 className="font-serif-luxe text-4xl font-light italic leading-[1.4] text-foreground sm:text-5xl pb-12">
               So today… smile a little extra, <br /> laugh a little louder <br /> <br />
               <span className="text-aurora mt-4 block">because you’re not just loved — you’re genuinely appreciated <E>😌💖</E></span>
             </h3>
@@ -560,9 +560,9 @@ const Climax = () => {
         >
           and so —
         </motion.p>
-        <h2 className="font-serif-luxe text-6xl font-light leading-relaxed sm:text-8xl pb-8">
+        <h2 className="font-serif-luxe text-6xl font-light leading-relaxed sm:text-8xl pb-12">
           <span className="text-aurora glow-soft">Happy</span> <br />
-          <span className="text-aurora glow-soft">Birthday</span> <span className="inline-block"><E>🎉</E></span>
+          <span className="text-aurora glow-soft">Birthday</span> <span className="inline-block"><E>🌸✨💖</E></span>
         </h2>
       </motion.div>
     </section>
