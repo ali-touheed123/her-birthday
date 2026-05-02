@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&family=Dancing+Script:wght@400..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -81,7 +83,7 @@
   }
 
   body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Outfit', system-ui, sans-serif;
     overflow-x: hidden;
     background: hsl(var(--background));
   }
@@ -94,13 +96,23 @@
 
 @layer components {
   .font-serif-luxe {
-    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+    font-family: 'Playfair Display', serif;
     font-feature-settings: "liga", "dlig";
+    letter-spacing: -0.02em;
   }
 
   .font-sans-luxe {
-    font-family: 'Inter', system-ui, sans-serif;
-    letter-spacing: -0.01em;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-accent {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .reveal-text {
+    overflow: hidden;
+    display: block;
   }
 
   .text-aurora {
@@ -108,20 +120,17 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-  }
-
-  .no-gradient {
-    -webkit-background-clip: border-box !important;
-    background-clip: border-box !important;
-    color: initial !important;
-    -webkit-text-fill-color: initial !important;
-    background: none !important;
     display: inline-block;
   }
 
+  .aurora-bg {
+    background: var(--gradient-aurora);
+    background-attachment: fixed;
+  }
+
   .glass {
-    background: linear-gradient(135deg, hsl(280 30% 25% / 0.8), hsl(240 30% 15% / 0.7));
-    border: 1px solid hsl(280 50% 60% / 0.2);
+    @apply bg-card/40 backdrop-blur-xl border border-white/10;
+    box-shadow: var(--shadow-soft);
   }
 
   .glow-bloom {
