@@ -153,7 +153,7 @@ const Index = () => {
 
       {/* ============ STORY ============ */}
       <div aria-hidden={!entered}>
-        {/* Hero: hold-the-breath moment */}
+        {/* Hero */}
         <Scene align="center" parallax={false}>
           <FloatingOrbs />
           <motion.div
@@ -176,6 +176,55 @@ const Index = () => {
           </motion.div>
         </Scene>
 
+        {/* Intro sequence */}
+        <Scene>
+          <div className="text-center">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase"
+            >
+              It started quietly…
+            </motion.p>
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl"
+            >
+              like any other day <br />
+              <span className="text-aurora">But something about it felt different <E>👀</E></span>
+            </motion.h3>
+          </div>
+        </Scene>
+
+        <Scene>
+          <div className="text-center">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase"
+            >
+              and then —
+            </motion.p>
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl"
+            >
+              Almost like the world was waiting <br />
+              for a <span className="text-aurora">cutie to born…</span> <br /> <br />
+              <span className="text-xs font-sans-luxe tracking-[0.2em] opacity-70">
+                someone who makes everything a little softer, <br />
+                a little brighter <E>✨</E>
+              </span>
+            </motion.h3>
+          </div>
+        </Scene>
+
         {/* Name reveal */}
         <NameReveal name={HER_NAME} />
 
@@ -183,24 +232,24 @@ const Index = () => {
         <Scene>
           <MemoryCard
             kicker="Chapter I"
-            line="Happy Birthday to my cutest, softest,"
-            highlight={<>most dangerously adorable human ever <E>🥳🌸💖</E></>}
+            line="You know what’s funny? Some people walk into life and change nothing…"
+            highlight={<>and then there are people like you who don’t even try — yet somehow make everything better <E>😭💖</E></>}
           />
         </Scene>
 
         <Scene>
           <MemoryCard
             kicker="Chapter II"
-            line="May Allah protect you from everything bad, fill your life with happiness, and make all your dreams come true…"
-            highlight={<>but honestly, I feel like the world already got lucky the day you were born <E>🤭✨</E></>}
+            line="It’s not just about today. It’s about all the little things. the way you smile, the way you talk, the way you just exist…"
+            highlight={<>and somehow make people feel lighter <E>🥹✨</E></>}
           />
         </Scene>
 
         <Scene>
           <MemoryCard
             kicker="Chapter III"
-            line="Today isn’t just your birthday…today is all about YOU <E>👀🎂</E>"
-            highlight={<>No stress, no responsibilities — just pure princess treatment <E>😌👑</E></>}
+            line="And honestly… I believe Allah chose a beautiful day to bring someone like you into this world."
+            highlight={<>the day you were born <E>🤭🌸</E></>}
           />
         </Scene>
 
@@ -209,8 +258,30 @@ const Index = () => {
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase"
+            >
+              today is different
+            </motion.p>
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl"
+            >
+              because today… is yours. <br />
+              No stress, No worries. <br /> <br />
+              <span className="text-aurora">just good vibes and full princess energy <E>👑</E></span>
+            </motion.h3>
+          </div>
+        </Scene>
+
+        <Scene>
+          <div className="text-center">
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
               className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase"
             >
               let's talk about you
@@ -219,13 +290,12 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl will-change-[transform,opacity]"
             >
-              Like how are you even real? <E>😭💘</E> <br /><br />
+              Like how are you even real? <E>😭</E> <br /><br />
               That smile? <span className="text-aurora">Illegal.</span><br />
               That vibe? <span className="text-aurora">Addictive.</span><br />
-              Those little quirks? <span className="text-aurora">Unforgettable. <E>🫠❤️</E></span>
+              Those little quirks? <span className="text-aurora">Unforgettable. <E>🫠💖</E></span>
             </motion.h3>
           </div>
         </Scene>
@@ -238,11 +308,11 @@ const Index = () => {
         {/* Typewriter line */}
         <Scene>
           <div className="text-center">
-            <p className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase">a thought I kept for today</p>
+            <p className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase">a thought I saved for today</p>
             <h3 className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl glow-soft min-h-[6rem]">
-              And somehow, without even trying,<br />
+              And somehow… <br />
               <span className="text-aurora inline-block mt-4">
-                <Typewriter text="you’ve taken a very special place in my heart 🤍" speed={45} start={entered} />
+                <Typewriter text="without even trying, you’ve taken a very special place in my heart 🤍" speed={45} start={entered} />
               </span>
             </h3>
           </div>
@@ -256,8 +326,8 @@ const Index = () => {
           <div className="text-center">
             <p className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase">final note</p>
             <h3 className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl">
-              So today, just smile a little extra, laugh a little louder... <br />
-              <span className="text-aurora">you’re not just loved, you’re adored <E>😌💖</E></span>
+              So today… smile a little extra, <br /> laugh a little louder <br /> <br />
+              <span className="text-aurora">because you’re not just loved — you’re genuinely appreciated <E>😌💖</E></span>
             </h3>
 
             <motion.button
@@ -298,8 +368,11 @@ const Index = () => {
             >
               <div className="mb-4 text-3xl">💌</div>
               <p className="font-serif-luxe text-xl sm:text-2xl font-light italic leading-snug">
-                Sending you an unreasonable amount of love, hugs, and all the good vibes in the universe… <br /><br />
-                because honestly, you deserve nothing less 💕🌹✨
+                Stay exactly the way you were… <br />
+                that’s already more than enough <E>✨</E> <br /><br />
+                <span className="text-sm font-sans-luxe tracking-widest opacity-70">
+                  Sending you an unreasonable amount of love, hugs, and all the good vibes in the universe… <E>💕🌹✨</E>
+                </span>
               </p>
               <button
                 onClick={() => setShowFinalNote(false)}

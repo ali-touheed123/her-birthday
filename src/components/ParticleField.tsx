@@ -49,8 +49,6 @@ export const ParticleField = ({
       };
     });
 
-    const onScroll = () => { scrollY = window.scrollY; };
-    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", resize);
     resize();
 
@@ -71,7 +69,6 @@ export const ParticleField = ({
         const py = p.y * h;
         const radius = p.r * (0.6 + p.z) * 2;
 
-        // Use a simple radial gradient instead of shadowBlur for much better performance
         const grad = ctx.createRadialGradient(px, py, 0, px, py, radius);
         grad.addColorStop(0, `hsla(${p.hue}, 90%, 75%, ${0.6 * p.z})`);
         grad.addColorStop(1, `hsla(${p.hue}, 90%, 70%, 0)`);
@@ -87,7 +84,6 @@ export const ParticleField = ({
 
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", resize);
     };
   }, [density, hueA, hueB, hueC, scrollFactor]);
