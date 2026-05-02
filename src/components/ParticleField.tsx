@@ -59,7 +59,6 @@ export const ParticleField = ({
       t += 0.016;
       ctx.clearRect(0, 0, w, h);
       ctx.globalCompositeOperation = "lighter";
-      const parallax = scrollY * scrollFactor;
 
       for (const p of particles) {
         p.x += p.vx; p.y += p.vy;
@@ -69,16 +68,18 @@ export const ParticleField = ({
 
         const sway = Math.sin(t * 0.6 + p.phase) * 8;
         const px = p.x * w + sway;
-        const py = (p.y * h) - (parallax * p.z * 0.4);
-        const radius = p.r * (0.6 + p.z) * 3;
+        const py = p.y * h;
+        const radius = p.r * (0.6 + p.z) * 2;
 
-        ctx.fillStyle = `hsla(${p.hue}, 90%, 70%, ${0.4 * p.z})`;
-        ctx.shadowBlur = radius * 2;
-        ctx.shadowColor = `hsla(${p.hue}, 90%, 70%, ${0.5 * p.z})`;
+        // Use a simple radial gradient instead of shadowBlur for much better performance
+        const grad = ctx.createRadialGradient(px, py, 0, px, py, radius);
+        grad.addColorStop(0, `hsla(${p.hue}, 90%, 75%, ${0.6 * p.z})`);
+        grad.addColorStop(1, `hsla(${p.hue}, 90%, 70%, 0)`);
+
+        ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.arc(px, py, radius, 0, Math.PI * 2);
         ctx.fill();
-        ctx.shadowBlur = 0; // reset for next
       }
       raf = requestAnimationFrame(tick);
     };
