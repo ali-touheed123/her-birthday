@@ -158,20 +158,20 @@ const Index = () => {
         {/* Hero */}
         <Scene align="center" parallax={false}>
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: entered ? 1 : 0 }}
-            transition={{ duration: 2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="relative text-center"
+            initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+            animate={{ opacity: entered ? 1 : 0, y: entered ? 0 : 40, filter: entered ? "blur(0px)" : "blur(10px)" }}
+            transition={{ duration: 1.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="relative text-center px-4"
           >
-            <p className="font-sans-luxe text-[10px] tracking-[0.6em] text-muted-foreground uppercase opacity-80">A film for one</p>
-            <h2 className="mt-8 font-serif-luxe text-6xl font-medium italic leading-[1.1] text-foreground sm:text-7xl">
+            <p className="font-sans-luxe text-[10px] tracking-[0.6em] text-muted-foreground uppercase opacity-80 mb-6">A film for one</p>
+            <h2 className="font-serif-luxe text-6xl font-medium italic leading-[1.2] text-foreground sm:text-7xl pb-4">
               Once upon a <br />
               <span className="text-aurora">very special day…</span>
             </h2>
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="mx-auto mt-16 h-12 w-[1px] bg-gradient-to-b from-primary via-secondary/50 to-transparent"
+              className="mx-auto mt-12 h-12 w-[1px] bg-gradient-to-b from-primary via-secondary/50 to-transparent"
             />
             <p className="mt-4 font-sans-luxe text-[9px] tracking-[0.5em] text-muted-foreground uppercase opacity-60">scroll to reveal</p>
           </motion.div>
@@ -189,11 +189,11 @@ const Index = () => {
               It started quietly…
             </motion.p>
             <motion.h3
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif-luxe text-4xl font-light italic leading-tight text-foreground sm:text-5xl"
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              className="font-serif-luxe text-4xl font-light italic leading-[1.3] text-foreground sm:text-5xl pb-4"
             >
               like any other day <br />
               <span className="text-aurora mt-4 block">But something about it felt different <E>👀</E></span>
@@ -212,15 +212,15 @@ const Index = () => {
               and then —
             </motion.p>
             <motion.h3
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif-luxe text-4xl font-light italic leading-tight text-foreground sm:text-5xl"
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              className="font-serif-luxe text-4xl font-light italic leading-[1.3] text-foreground sm:text-5xl pb-6"
             >
               Almost like the world was waiting <br />
               for a <span className="text-aurora italic">cutie to be born…</span> <br /> <br />
-              <span className="font-accent text-3xl text-primary/80 block mt-4">
+              <span className="font-accent text-4xl text-primary/80 block mt-4 pb-2">
                 someone who makes everything a little softer, <br />
                 a little brighter <E>✨</E>
               </span>
@@ -267,15 +267,15 @@ const Index = () => {
               today is different
             </motion.p>
             <motion.h3
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif-luxe text-4xl font-light italic leading-tight text-foreground sm:text-5xl"
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              className="font-serif-luxe text-4xl font-light italic leading-[1.3] text-foreground sm:text-5xl pb-6"
             >
               because today… is <span className="text-aurora">yours.</span> <br />
               No stress, No worries. <br /> <br />
-              <span className="font-accent text-3xl text-secondary">just good vibes and full princess energy <E>👑</E></span>
+              <span className="font-accent text-4xl text-secondary block pb-2">just good vibes and full princess energy <E>👑</E></span>
             </motion.h3>
           </div>
         </Scene>
@@ -291,11 +291,11 @@ const Index = () => {
               let's talk about you
             </motion.p>
             <motion.h3
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif-luxe text-4xl font-light italic leading-tight text-foreground sm:text-5xl will-change-[transform,opacity]"
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+              className="font-serif-luxe text-4xl font-light italic leading-[1.3] text-foreground sm:text-5xl will-change-[transform,opacity] pb-6"
             >
               Like how are you even real? <E>😭</E> <br /><br />
               That smile? <span className="text-aurora">Illegal.</span><br />
@@ -314,7 +314,7 @@ const Index = () => {
         <Scene>
           <div className="text-center max-w-2xl px-6">
             <p className="font-sans-luxe text-[10px] tracking-[0.5em] text-muted-foreground uppercase mb-8 opacity-60">a thought I saved for today</p>
-            <h3 className="font-serif-luxe text-4xl font-light italic leading-snug text-foreground sm:text-5xl glow-soft min-h-[8rem]">
+            <h3 className="font-serif-luxe text-4xl font-light italic leading-[1.4] text-foreground sm:text-5xl glow-soft min-h-[8rem] pb-4">
               And somehow… <br />
               <span className="text-aurora inline-block mt-6">
                 <Typewriter text="without even trying, you’ve taken a very special place in my heart 🤍" speed={50} start={entered} />
@@ -330,7 +330,7 @@ const Index = () => {
         <Scene parallax={false}>
           <div className="text-center max-w-2xl px-6">
             <p className="font-sans-luxe text-[10px] tracking-[0.5em] text-muted-foreground uppercase mb-8 opacity-60">final note</p>
-            <h3 className="font-serif-luxe text-4xl font-light italic leading-tight text-foreground sm:text-5xl">
+            <h3 className="font-serif-luxe text-4xl font-light italic leading-[1.3] text-foreground sm:text-5xl pb-6">
               So today… smile a little extra, <br /> laugh a little louder <br /> <br />
               <span className="text-aurora mt-4 block">because you’re not just loved — you’re genuinely appreciated <E>😌💖</E></span>
             </h3>
@@ -349,7 +349,7 @@ const Index = () => {
         {/* Closing fade-to-black */}
         <Scene parallax={false}>
           <div className="text-center opacity-40">
-            <p className="font-accent text-2xl mb-2 text-primary">Made with love</p>
+            <p className="font-accent text-3xl mb-2 text-primary">Made with love</p>
             <p className="font-sans-luxe text-[8px] tracking-[0.5em] text-muted-foreground uppercase">Just for you</p>
           </div>
         </Scene>
