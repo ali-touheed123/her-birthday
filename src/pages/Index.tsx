@@ -98,10 +98,10 @@ const Index = () => {
           >
             <FloatingOrbs />
             <motion.h1
-              initial={{ opacity: 0, y: 24, filter: "blur(16px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 2.4, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-              className="font-serif-luxe text-center text-3xl font-light leading-tight text-foreground sm:text-4xl glow-soft"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+              className="font-serif-luxe text-center text-3xl font-light leading-tight text-foreground sm:text-4xl glow-soft will-change-[transform,opacity]"
             >
               Hey… I made something for you <E>👀</E>
             </motion.h1>
@@ -216,11 +216,11 @@ const Index = () => {
               let's talk about you
             </motion.p>
             <motion.h3
-              initial={{ opacity: 0, y: 24, filter: "blur(20px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 1.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl"
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl will-change-[transform,opacity]"
             >
               Like how are you even real? <E>😭💘</E> <br /><br />
               That smile? <span className="text-aurora">Illegal.</span><br />
@@ -327,17 +327,17 @@ const NameReveal = ({ name }: { name: string }) => {
   return (
     <section ref={ref} className="relative flex min-h-[120svh] items-center justify-center overflow-hidden px-6">
       <FloatingOrbs />
-      <motion.div style={{ scale, opacity }} className="relative text-center">
+      <motion.div style={{ scale, opacity }} className="relative text-center will-change-[transform,opacity]">
         <p className="font-sans-luxe text-xs tracking-[0.5em] text-muted-foreground uppercase mb-8">her name</p>
         <h2 className="font-serif-luxe text-7xl font-light leading-none sm:text-8xl">
           {name.split("").map((ch, i) => (
             <motion.span
               key={i}
-              initial={{ opacity: 0, y: 60, filter: "blur(20px)", rotateX: -40 }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", rotateX: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.6 }}
-              transition={{ duration: 1.4, delay: 0.15 * i, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-block text-aurora glow-soft"
+              transition={{ duration: 1, delay: 0.1 * i, ease: [0.22, 1, 0.36, 1] }}
+              className="inline-block text-aurora glow-soft will-change-[transform,opacity]"
               style={{ transformStyle: "preserve-3d" }}
             >
               {ch}
@@ -369,11 +369,11 @@ const MemoryCard = ({ kicker, line, highlight }: { kicker: string; line: string;
       {kicker}
     </motion.p>
     <motion.h3
-      initial={{ opacity: 0, y: 24, filter: "blur(20px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 1.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl"
+      transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+      className="mt-8 font-serif-luxe text-3xl font-light italic leading-snug text-foreground sm:text-4xl will-change-[transform,opacity]"
     >
       {line} <br />
       <span className="text-aurora">{highlight}</span>
