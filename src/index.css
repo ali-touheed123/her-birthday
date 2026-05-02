@@ -121,6 +121,10 @@
     background-clip: text;
     color: transparent;
     display: inline-block;
+    padding-bottom: 0.2em;
+    margin-bottom: -0.2em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   .aurora-bg {
@@ -147,7 +151,6 @@
     background-clip: initial !important;
     color: #fff !important;
     -webkit-text-fill-color: initial !important;
-    text-fill-color: initial !important;
     display: inline-block !important;
     filter: none !important;
   }
