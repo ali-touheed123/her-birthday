@@ -375,7 +375,7 @@ const Index = () => {
             >
               <div className="mb-4 text-3xl">💌</div>
               <p className="font-serif-luxe text-xl sm:text-2xl font-light italic leading-snug">
-                Stay exactly the way you are… <br />
+                Stay exactly the way you were… <br />
                 that’s already more than enough <E>✨</E> <br /><br />
                 <span className="text-sm font-sans-luxe tracking-widest opacity-70">
                   Sending you an unreasonable amount of love, hugs, and all the good vibes in the universe… <br /><br />
